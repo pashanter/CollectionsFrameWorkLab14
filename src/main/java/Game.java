@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
 
 public class Game {
 
@@ -19,7 +18,7 @@ public class Game {
         return null;
     }
 
-    public int round (String playerName1, String playerName2) {
+    public int round(String playerName1, String playerName2) {
         Player player1 = findPlayer(playerName1);
         Player player2 = findPlayer(playerName2);
         if (player1 == null) {
@@ -28,13 +27,11 @@ public class Game {
         if (player2 == null) {
             throw new NotRegisteredException(playerName2);
         }
-        if (player1.getStrength() >  player2.getStrength()) {
+        if (player1.getStrength() > player2.getStrength()) {
             return 1;
-        }
-        else if (player1.getStrength() <  player2.getStrength()) {
+        } else if (player1.getStrength() < player2.getStrength()) {
             return 2;
-        }
-        else {
+        } else {
             return 0;
         }
     }

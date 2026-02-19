@@ -7,8 +7,8 @@ public class GameTest {
 
     public void testGameWhenFistPlayerWins() {
         Game game = new Game();
-        Player player1 = new Player("Vova", 1,10);
-        Player player2 = new Player("Kola", 2,9);
+        Player player1 = new Player("Vova", 1, 10);
+        Player player2 = new Player("Kola", 2, 9);
         game.register(player1);
         game.register(player2);
         int actual = game.round("Vova", "Kola");
@@ -20,8 +20,8 @@ public class GameTest {
     @Test
     public void testGameWhenSecondPlayerWins() {
         Game game = new Game();
-        Player player1 = new Player("Vova", 1,10);
-        Player player2 = new Player("Kola", 2,112);
+        Player player1 = new Player("Vova", 1, 10);
+        Player player2 = new Player("Kola", 2, 112);
         game.register(player1);
         game.register(player2);
         int actual = game.round("Vova", "Kola");
@@ -32,8 +32,8 @@ public class GameTest {
     @Test
     public void testGameWhenDraw() {
         Game game = new Game();
-        Player player1 = new Player("Vova", 1,10);
-        Player player2 = new Player("Kola", 2,10);
+        Player player1 = new Player("Vova", 1, 10);
+        Player player2 = new Player("Kola", 2, 10);
         game.register(player1);
         game.register(player2);
         int actual = game.round("Vova", "Kola");
@@ -45,7 +45,7 @@ public class GameTest {
     @Test
     public void testGameWhenSecondPlayerNotRegister() {
         Game game = new Game();
-        Player player1 = new Player("Vova", 1,10);
+        Player player1 = new Player("Vova", 1, 10);
         game.register(player1);
 
         Assertions.assertThrows(NotRegisteredException.class, () -> game.round("Vova", "Kola"));
@@ -54,7 +54,7 @@ public class GameTest {
     @Test
     public void testGameWhenFirstPlayerNotRegister() {
         Game game = new Game();
-        Player player2 = new Player("Kola", 1,10);
+        Player player2 = new Player("Kola", 1, 10);
         game.register(player2);
         Assertions.assertThrows(NotRegisteredException.class, () -> game.round("Vova", "Kola"));
     }
